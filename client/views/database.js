@@ -64,7 +64,7 @@ Template.database_Corners.helpers({
 });
 
 Template.database_Freekicks.helpers({
-    Freekicks: function () {
+    Events: function () {
         return Freekicks;
     },
     docKey: function () {
