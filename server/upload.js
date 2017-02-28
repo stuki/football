@@ -6,7 +6,7 @@ Meteor.methods({
     })
 
     jsonArr = parsed.data
-
+    console.log(parsed.data)
     check(jsonArr, Array)
 
     for (var i = 0; i < jsonArr.length; i++) {
@@ -15,7 +15,7 @@ Meteor.methods({
       exists = Events.findOne(item.matchId)
       if (!exists) {
         Events.insert(item)
-      }       
+      }
     }
   }
 })
