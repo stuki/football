@@ -1,0 +1,51 @@
+<template name="database">
+	<!-- Use `name` to add a custom class to the outer container -->
+  {{#basicTabs name="tab-pane" tabs=tabs}}
+    <!--
+      There are two ways to define content for your tabs:
+
+      1. Wrap each tabbed section in a blank `<div></div>`.
+         Sections must correspond with the order of the tabs you specified.
+
+      2. Wrap each tabbed section in the provided block helper (RECOMMENDED!).
+         `{{#tabContent slug="nameOfSlug"}} ... {{/tabContent}}`
+         These can be defined in any order you like.
+    -->
+    {{#tabContent slug="events"}}
+    	{{> database_Events}}
+    {{/tabContent}}
+
+    {{#tabContent slug="freekicks"}}
+    	{{> database_Freekicks}}
+    {{/tabContent}}
+
+    {{#tabContent slug="corners"}}
+    	{{> database_Corners}}
+    {{/tabContent}}
+
+    {{#tabContent slug="penalties"}}
+    	{{> database_Penalties}}
+    {{/tabContent}}
+
+  {{/basicTabs}}
+</template>
+
+<template name="database_Events">
+  <h3>Events</h3>
+  {{> reactiveTable collection=Events fields=docKey settings=settings}}
+</template>
+
+<template name="database_Corners">
+  <h3>Events</h3>
+  {{> reactiveTable collection=Corners fields=docKey settings=settings}}
+</template>
+
+<template name="database_Freekicks">
+  <h3>Events</h3>
+  {{> reactiveTable collection=Freekicks fields=docKey settings=settings}}
+</template>
+
+<template name="database_Penalties">
+  <h3>Events</h3>
+  {{> reactiveTable collection=Penalties fields=docKey settings=settings}}
+</template>

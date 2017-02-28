@@ -1,0 +1,22 @@
+<template name="upload">
+  <h4 class="page-header">Choose a database and upload a CSV</h4>
+
+
+
+  {{#unless uploading}}
+  	<select>
+  		<option></option>
+  		<option value="events">Events</option>
+  		<option value="freekick">Freekicks</option>
+  		<option value="penalty">Penalties</option>
+  		<option value="corner">Corners</option>
+  	</select>
+    <input type="file" name="uploadCSV" accept=".csv">
+    <button class="upload">Upload</button>
+  {{else}}
+    <p>
+      <i class="fa fa-spin fa-refresh"></i>
+      Uploading files...
+    </p>
+    {{/unless}}
+</template>
