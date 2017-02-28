@@ -1,15 +1,5 @@
 import './database.html'
-
-function getKeys(coll) {
-	doc = global[coll].findOne()
-	i = 0
-	docKey = []
-	for (key in doc) {
-		docKey[i] = key
-		i++
-	};
-	return docKey
-}
+import './upload.html'
 
 ReactiveTabs.createInterface({
   template: 'basicTabs'
@@ -18,12 +8,8 @@ ReactiveTabs.createInterface({
 Template.database.helpers({
   	tabs: function () {
 	    return [
-			{ name: 'Events', slug: 'events', onRender: function(slug, template) {
-				var docKey = getKeys("Events")
-			}},
-			{ name: 'Corners', slug: 'corners' },
-			{ name: 'Freekicks', slug: 'freekicks' },
-			{ name: 'Penalties', slug: 'penalties'}
+			{ name: 'Events', slug: 'events' },
+			{ name: 'Upload', slug: 'upload' }
 	    ];
 	},
 	activeTab: function () {
@@ -37,54 +23,6 @@ Template.database_Events.helpers({
     },
     docKey: function () {
     	doc = Events.findOne()
-		i = 0
-		docKey = []
-		for (key in doc) {
-			docKey[i] = key
-			i++
-		};
-		return docKey
-    }
-});
-
-Template.database_Corners.helpers({
-    Corners: function () {
-        return Corners;
-    },
-    docKey: function () {
-    	doc = Corners.findOne()
-		i = 0
-		docKey = []
-		for (key in doc) {
-			docKey[i] = key
-			i++
-		};
-		return docKey
-    }
-});
-
-Template.database_Freekicks.helpers({
-    Events: function () {
-        return Freekicks;
-    },
-    docKey: function () {
-    	doc = Freekicks.findOne()
-		i = 0
-		docKey = []
-		for (key in doc) {
-			docKey[i] = key
-			i++
-		};
-		return docKey
-    }
-});
-
-Template.database_Penalties.helpers({
-    Penalties: function () {
-        return Penalties;
-    },
-    docKey: function () {
-    	doc = Penalties.findOne()
 		i = 0
 		docKey = []
 		for (key in doc) {

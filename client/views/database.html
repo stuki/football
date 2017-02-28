@@ -15,16 +15,8 @@
     	{{> database_Events}}
     {{/tabContent}}
 
-    {{#tabContent slug="freekicks"}}
-    	{{> database_Freekicks}}
-    {{/tabContent}}
-
-    {{#tabContent slug="corners"}}
-    	{{> database_Corners}}
-    {{/tabContent}}
-
-    {{#tabContent slug="penalties"}}
-    	{{> database_Penalties}}
+    {{#tabContent slug="upload"}}
+    	{{> upload}}
     {{/tabContent}}
 
   {{/basicTabs}}
@@ -33,19 +25,4 @@
 <template name="database_Events">
   <h3>Events</h3>
   {{> reactiveTable collection=Events fields=docKey settings=settings}}
-</template>
-
-<template name="database_Corners">
-  <h3>Events</h3>
-  {{> reactiveTable collection=Corners fields=docKey settings=settings}}
-</template>
-
-<template name="database_Freekicks">
-  <h3>Events</h3>
-  {{> reactiveTable collection=Freekicks fields=docKey settings=settings}}
-</template>
-
-<template name="database_Penalties">
-  <h3>Events</h3>
-  {{> reactiveTable collection=Penalties fields=docKey settings=settings}}
 </template>

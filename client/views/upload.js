@@ -30,7 +30,6 @@ Template.upload.events({
 
       reader.onload = function(event) {
         let csv = event.target.result
-        console.log(csv)
         Meteor.call('parseUpload', csv, selected, (error, response) => {
           if (error) {
             Bert.alert(error.reason, 'warning')
@@ -46,12 +45,5 @@ Template.upload.events({
     } else {
       Bert.alert('FileReader is not supported in this browser.')
     }
-
-    // Papa.parse(event.target.files[0], {
-    //   header: true,
-    //   complete(results, file) {
-    //     
-    //   }
-    // })
   }
 })
